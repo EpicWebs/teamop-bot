@@ -16,8 +16,16 @@ client.on("message", async message => {
 	// COMMANDS
 	switch(command) {	
 		case "duel":
-			const m = await message.channel.send("Dueling...");
-			m.edit(message.mentions.members.first().toString() + " was slain by " + message.author.toString());
+			var randomNumber = randomIntFromInterval(1,2);
+			
+			if(randomNumber == 1) {
+				const m = await message.channel.send("Dueling...");
+				m.edit(message.mentions.members.first().toString() + " was slain by " + message.author.toString() + "in an epic duel.");
+			} else {
+				const m = await message.channel.send("Dueling...");
+				m.edit(message.author.toString() + " killed " + message.mentions.members.first().toString() + "in an epic duel.");
+			}
+		
 			break;
 		default:
 			await message.channel.send("This command is not recognized.");
@@ -27,3 +35,7 @@ client.on("message", async message => {
 });
 
 client.login(process.env.TOKEN);
+
+function randomIntFromInterval(min,max) {
+	return Math.floor(Math.random()*(max-min+1)+min);
+}
