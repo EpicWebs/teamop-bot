@@ -25,7 +25,7 @@ client.on("message", async message => {
 				m.edit(personToDuel + " threw a fireball at " + authorName);
 				
 				const m2 = await message.channel.send("...");
-				m2.edit(authorName + " dodged the fireball and stabbed " + personToDuel) );
+				m2.edit(authorName + " dodged the fireball and stabbed " + personToDuel);
 				
 				const m3 = await message.channel.send("...");
 				m3.edit(personToDuel + " was slain by " + authorName + " in an epic duel.");
