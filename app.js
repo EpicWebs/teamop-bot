@@ -17,7 +17,7 @@ client.on("message", async message => {
 	switch(command) {	
 		case "duel":
 			const m = await message.channel.send("Dueling...");
-			m.edit(message.mentions.members.first() + " was slain by " + message.author);
+			m.edit(message.mentions.members.first().nickname + " was slain by " + message.author.nickname);
 			break;
 		default:
 			await message.channel.send("This command is not recognized.");
