@@ -16,9 +16,9 @@ client.on("message", async message => {
   if(command === "duel") {
 	var messageAuthor = message.author;
 	var personToFight = message.mentions.members.first();
-	var message = messageAuthor + ' was slain in a duel by ' + personToFight;
+	var messageText = messageAuthor + ' was slain in a duel by ' + personToFight;
 	
-    const m = await message.channel.send(message);
+    const m = await message.channel.send(messageText);
   }
   
   if(command === "say") {
