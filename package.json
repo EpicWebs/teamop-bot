@@ -1,0 +1,23 @@
+{
+  "name": "teamop-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpicWebs/teamop-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpicWebs/teamop-bot/issues"
+  },
+  "homepage": "https://github.com/EpicWebs/teamop-bot#readme"
+}
