@@ -20,10 +20,10 @@ client.on("message", async message => {
 			
 			if(randomNumber == 1) {
 				const m = await message.channel.send("Dueling...");
-				m.edit(message.mentions.members.first().toString() + " was slain by " + message.author.toString() + "in an epic duel.");
+				m.edit(message.mentions.members.first().toString() + " was slain by " + message.author.toString() + " in an epic duel.");
 			} else {
 				const m = await message.channel.send("Dueling...");
-				m.edit(message.author.toString() + " killed " + message.mentions.members.first().toString() + "in an epic duel.");
+				m.edit(message.author.toString() + " killed " + message.mentions.members.first().toString() + " in an epic duel.");
 			}
 		
 			break;
