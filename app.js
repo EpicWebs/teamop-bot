@@ -20,6 +20,9 @@ client.on("message", async message => {
 			var authorName = String(message.author);
 			var personToDuel = String(message.mentions.members.first());
 			
+			authorName = authorName.replace("@", "");
+			personToDuel = personToDuel.replace("@", "");
+			
 			if(randomNumber == 1) {
 				const m = await message.channel.send("...");
 				m.edit(personToDuel + " threw a fireball at " + authorName);
