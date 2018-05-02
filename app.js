@@ -13,16 +13,17 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
-  if(command === "ping") {
-    // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
-    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  if(command === "duel") {
+	var messageAuthor = message.author;
+	var personToFight = message.mentions.members.first();
+	
+    const m = await message.channel.send("Dueling...");
+    m.edit(messageAuthor.nick + ' was slain in a duel by ' personToFight.nick);
   }
   
   if(command === "say") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-    // To get the "message" itself we join the `args` back into a string with spaces: 
+    // To get the "message" itself we join the 'args' back into a string with spaces: 
     const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     message.delete().catch(O_o=>{}); 
@@ -53,8 +54,8 @@ client.on("message", async message => {
     
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+      .catch(error => message.reply('Sorry ${message.author} I couldn't kick because of : ${error}'));
+    message.reply('${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}');
 
   }
   
@@ -74,8 +75,8 @@ client.on("message", async message => {
     if(!reason) reason = "No reason provided";
     
     await member.ban(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
-    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+      .catch(error => message.reply('Sorry ${message.author} I couldn't ban because of : ${error}'));
+    message.reply('${member.user.tag} has been banned by ${message.author.tag} because: ${reason}');
   }
   
   if(command === "purge") {
@@ -91,7 +92,7 @@ client.on("message", async message => {
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({count: deleteCount});
     message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+      .catch(error => message.reply('Couldn't delete messages because of: ${error}'));
   }
 });
 
