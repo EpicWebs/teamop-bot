@@ -20,16 +20,16 @@ client.on("message", async message => {
 			
 			if(randomNumber == 1) {
 				const m = await message.channel.send("...");
-				m.edit(message.mentions.members.first().toString() + " threw a fireball at " + message.author.toString());
+				m.edit(String(message.mentions.members.first() + " threw a fireball at " + String(message.author));
 				
 				const m2 = await message.channel.send("...");
-				m2.edit(message.author.toString() + " dodged the fireball and stabbed " + message.mentions.members.first().toString());
+				m2.edit(String(message.author) + " dodged the fireball and stabbed " + String(message.mentions.members.first()) );
 				
 				const m3 = await message.channel.send("...");
-				m3.edit(message.mentions.members.first().toString() + " was slain by " + message.author.toString() + " in an epic duel.");
+				m3.edit(String(message.mentions.members.first() + " was slain by " + String(message.author) + " in an epic duel.");
 			} else {
 				const m = await message.channel.send("Dueling...");
-				m.edit(message.author.toString() + " was killed by " + message.mentions.members.first().toString() + " in a duel of the ages.");
+				m.edit(String(message.author) + " was killed by " + String(message.mentions.members.first() + " in a duel of the ages.");
 			}
 		
 			break;
