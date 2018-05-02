@@ -18,22 +18,17 @@ client.on("message", async message => {
 		case "duel":
 			var randomNumber = randomIntFromInterval(1,2);
 			var authorName = message.author.username;
-			var personToDuel = message.mentions.members.first().username;
+			var personToDuel = message.mentions.members.first().user;
+			personToDuel = personToDuel.username;
 			
 			message.delete().catch(O_o=>{});
 			
-			if(randomNumber == 1) {
-				const m = await message.channel.send("...");
-				m.edit(personToDuel + " threw a fireball at " + authorName);
-				
-				const m2 = await message.channel.send("...");
-				m2.edit(authorName + " dodged the fireball and stabbed " + personToDuel);
-				
-				const m3 = await message.channel.send("...");
-				m3.edit(personToDuel + " was slain by " + authorName + " in an epic duel.");
+			if(randomNumber == 1) {				
+				await message.channel.send(personToDuel + " threw a fireball at " + authorName);
+				await message.channel.send(authorName + " dodged the fireball and stabbed " + personToDuel);
+				await message.channel.send(personToDuel + " was slain by " + authorName + " in an epic duel.");
 			} else {
-				const m = await message.channel.send("Dueling...");
-				m.edit(authorName + " was killed by " + personToDuel + " in a duel of the ages.");
+				await message.channel.send(authorName + " was killed by " + personToDuel + " in a duel of the ages.");
 			}
 		
 			break;
