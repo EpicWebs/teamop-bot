@@ -14,8 +14,9 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
   
   // COMMANDS
-  if(command === "duel") {
-    const m = await message.channel.send("Testing");
+  if(command === "duel") {	
+    const m = await message.channel.send("Dueling...");
+    m.edit("pMauz was slain by " + message.author);
   }
   
 });
