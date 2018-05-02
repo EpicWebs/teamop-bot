@@ -23,7 +23,7 @@ client.on("message", async message => {
 				m.edit(message.mentions.members.first().toString() + " threw a fireball at " + message.author.toString());
 				
 				const m = await message.channel.send("...");
-				m.edit(message.author.toString() + " blocked the fireball and stabbed " + message.mentions.members.first().toString());
+				m.edit(message.author.toString() + " dodged the fireball and stabbed " + message.mentions.members.first().toString());
 				
 				const m = await message.channel.send("...");
 				m.edit(message.mentions.members.first().toString() + " was slain by " + message.author.toString() + " in an epic duel.");
