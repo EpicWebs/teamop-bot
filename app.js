@@ -17,8 +17,8 @@ client.on("message", async message => {
 	switch(command) {	
 		case "duel":
 			var randomNumber = randomIntFromInterval(1,2);
-			var authorName = message.author.tag;
-			var personToDuel = message.mentions.members.first().tag;
+			var authorName = message.author.username;
+			var personToDuel = message.mentions.members.first().username;
 			
 			message.delete().catch(O_o=>{});
 			
