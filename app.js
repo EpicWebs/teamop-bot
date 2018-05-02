@@ -17,19 +17,21 @@ client.on("message", async message => {
 	switch(command) {	
 		case "duel":
 			var randomNumber = randomIntFromInterval(1,2);
+			var authorName = String(message.author);
+			var personToDuel = String(message.mentions.members.first());
 			
 			if(randomNumber == 1) {
 				const m = await message.channel.send("...");
-				m.edit(String(message.mentions.members.first() + " threw a fireball at " + String(message.author));
+				m.edit(personToDuel + " threw a fireball at " + authorName);
 				
 				const m2 = await message.channel.send("...");
-				m2.edit(String(message.author) + " dodged the fireball and stabbed " + String(message.mentions.members.first()) );
+				m2.edit(authorName + " dodged the fireball and stabbed " + personToDuel) );
 				
 				const m3 = await message.channel.send("...");
-				m3.edit(String(message.mentions.members.first() + " was slain by " + String(message.author) + " in an epic duel.");
+				m3.edit(personToDuel + " was slain by " + authorName + " in an epic duel.");
 			} else {
 				const m = await message.channel.send("Dueling...");
-				m.edit(String(message.author) + " was killed by " + String(message.mentions.members.first() + " in a duel of the ages.");
+				m.edit(authorName + " was killed by " + personToDuel + " in a duel of the ages.");
 			}
 		
 			break;
