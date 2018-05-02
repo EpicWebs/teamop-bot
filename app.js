@@ -20,9 +20,6 @@ client.on("message", async message => {
 			var authorName = message.author.tag;
 			var personToDuel = message.mentions.members.first().tag;
 			
-			authorName = authorName.replace("@", "");
-			personToDuel = personToDuel.replace("@", "");
-			
 			message.delete().catch(O_o=>{});
 			
 			if(randomNumber == 1) {
