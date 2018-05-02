@@ -23,6 +23,8 @@ client.on("message", async message => {
 			authorName = authorName.replace("@", "");
 			personToDuel = personToDuel.replace("@", "");
 			
+			message.delete().catch(O_o=>{});
+			
 			if(randomNumber == 1) {
 				const m = await message.channel.send("...");
 				m.edit(personToDuel + " threw a fireball at " + authorName);
@@ -36,9 +38,6 @@ client.on("message", async message => {
 				const m = await message.channel.send("Dueling...");
 				m.edit(authorName + " was killed by " + personToDuel + " in a duel of the ages.");
 			}
-			
-			
-			message.delete().catch(O_o=>{});
 		
 			break;
 		default:
