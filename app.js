@@ -19,11 +19,17 @@ client.on("message", async message => {
 			var randomNumber = randomIntFromInterval(1,2);
 			
 			if(randomNumber == 1) {
-				const m = await message.channel.send("Dueling...");
+				const m = await message.channel.send("...");
+				m.edit(message.mentions.members.first().toString() + " threw a fireball at " + message.author.toString());
+				
+				const m = await message.channel.send("...");
+				m.edit(message.author.toString() + " blocked the fireball and stabbed " + message.mentions.members.first().toString());
+				
+				const m = await message.channel.send("...");
 				m.edit(message.mentions.members.first().toString() + " was slain by " + message.author.toString() + " in an epic duel.");
 			} else {
 				const m = await message.channel.send("Dueling...");
-				m.edit(message.author.toString() + " killed " + message.mentions.members.first().toString() + " in an epic duel.");
+				m.edit(message.author.toString() + " was killed by " + message.mentions.members.first().toString() + " in a duel of the ages.");
 			}
 		
 			break;
