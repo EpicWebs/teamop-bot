@@ -16,7 +16,7 @@ client.on("message", async message => {
   // COMMANDS
   if(command === "duel") {	
     const m = await message.channel.send("Dueling...");
-    m.edit("pMauz was slain by " + message.author);
+    m.edit(message.mentions.members.first() + " was slain by " + message.author);
   }
   
 });
