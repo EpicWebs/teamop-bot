@@ -17,8 +17,8 @@ client.on("message", async message => {
 	switch(command) {	
 		case "duel":
 			var randomNumber = randomIntFromInterval(1,2);
-			var authorName = String(message.author);
-			var personToDuel = String(message.mentions.members.first());
+			var authorName = message.author.tag;
+			var personToDuel = message.mentions.members.first().tag;
 			
 			authorName = authorName.replace("@", "");
 			personToDuel = personToDuel.replace("@", "");
@@ -36,6 +36,9 @@ client.on("message", async message => {
 				const m = await message.channel.send("Dueling...");
 				m.edit(authorName + " was killed by " + personToDuel + " in a duel of the ages.");
 			}
+			
+			
+			message.delete().catch(O_o=>{});
 		
 			break;
 		default:
