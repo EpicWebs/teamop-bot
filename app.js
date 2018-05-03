@@ -32,8 +32,15 @@ client.on("message", async message => {
 			}
 		
 			break;
-		case "live":			
-			await message.channel.send("Live Command");
+		case "live":
+			var authorProfile = message.author.fetchProfile();
+			var authorConnections = authorProfile.connections;
+			
+			authorConnections.forEach(function(value){
+				var thisConnection = value;
+				
+				await message.channel.send(thisConnection.type);
+			});
 	}
   
 });
