@@ -37,9 +37,9 @@ client.on("message", async message => {
 
 			getJSON("https://api.twitch.tv/kraken/streams/" + authorUsername, function(err, res) {
 				if (res.stream == null) {
-					await message.channel.send(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
+					message.channel.send(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
 				} else {
-					await message.channel.send(authorUsername + " is not currently live.");
+					message.channel.send(authorUsername + " is not currently live.");
 				}
 			});
 	}
