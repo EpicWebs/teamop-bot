@@ -34,9 +34,8 @@ client.on("message", async message => {
 			break;
 		case "live":
 			var authorProfile = message.author.fetchProfile();
-			var authorConnections = authorProfile.connections;
 
-			console.log(authorConnections);
+			console.log(authorProfile);
 
 			/**
 			authorConnections.forEach(function(connection, connectionId) {
