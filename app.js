@@ -36,11 +36,7 @@ client.on("message", async message => {
 			var authorProfile = message.author.fetchProfile;
 			var authorConnections = authorProfile.connections;
 			
-			authorConnections.forEach(function(value){
-				var thisConnection = value;
-				
-				await message.channel.send(thisConnection.type);
-			});
+			await message.channel.send("Live Command");
 		default:
 			await message.channel.send("This command is not recognized.");
 			break;
