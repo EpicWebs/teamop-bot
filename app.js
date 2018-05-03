@@ -33,15 +33,15 @@ client.on("message", async message => {
 		
 			break;
 		case "live":
-			var authorProfile = message.author.fetchProfile();
+			var authorUsername = message.author.username;
 
-			console.log(authorProfile);
-
-			/**
-			authorConnections.forEach(function(connection, connectionId) {
-				console.log(guildMemberId, guildMember.user.username);
-			})
-			**/
+			getJSON("https://api.twitch.tv/kraken/streams/" + authorUsername, function(err, res) {
+				if (res.stream == null) {
+					await message.channel.send(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
+				} else {
+					await message.channel.send(authorUsername + " is not currently live.");
+				}
+			});
 	}
   
 });
