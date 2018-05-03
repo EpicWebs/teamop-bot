@@ -39,11 +39,7 @@ client.on("message", async message => {
 			authorConnections.forEach(function(value){
 				var thisConnection = value;
 				
-				if(thisConnection.value.type == "twitch") {
-					await message.channel.send("This user has a twitch connection");
-				} else {
-					await message.channel.send(thisConnection.value.type);
-				}
+				await message.channel.send(thisConnection.type);
 			});
 		default:
 			await message.channel.send("This command is not recognized.");
