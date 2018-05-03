@@ -39,7 +39,6 @@ client.on("message", async message => {
 				if (res.stream == null) {
 					client.reply(message, authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
 				} else {
-					message.channel.send(authorUsername + " is not currently live.");
 					client.reply(message, authorUsername + " is not currently live.");
 				}
 			});
