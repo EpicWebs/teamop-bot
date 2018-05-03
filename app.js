@@ -34,14 +34,7 @@ client.on("message", async message => {
 			break;
 		case "live":
 			var authorUsername = message.author.username;
-
-			getJSON("https://api.twitch.tv/kraken/streams/" + authorUsername, function(err, res) {
-				if (res.stream == null) {
-					client.reply(message, authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
-				} else {
-					client.reply(message, authorUsername + " is not currently live.");
-				}
-			});
+			message.edit(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
 	}
   
 });
