@@ -36,11 +36,13 @@ client.on("message", async message => {
 			var authorProfile = message.author.fetchProfile();
 			var authorConnections = authorProfile.connections;
 
-			authorConnections.keys(myObj).forEach(function (key) {
-				let connection = myObj[key];
+			console.log(authorConnections);
 
-				await message.channel.send(connection.type);
-			});
+			/**
+			authorConnections.forEach(function(connection, connectionId) {
+				console.log(guildMemberId, guildMember.user.username);
+			})
+			**/
 	}
   
 });
