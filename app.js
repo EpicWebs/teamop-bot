@@ -34,7 +34,7 @@ client.on("message", async message => {
 						name: "!duel",
 						value: "Use !duel @mention to duel someone in discord, the winner will be decided randomly!"
 					},
-					]
+					],
 					footer: {
 						text: "TeamOP Bot",
 					}
