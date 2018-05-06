@@ -28,11 +28,8 @@ client.on("message", async message => {
 					description: "Commands and help for the TeamOP bot.",
 					timestamp: new Date(),
 					fields: [{
-						name: "!live",
-						value: "Takes your discord username and appends it to twitch.tv to create a link, only works if your discord and twitch username match."
-					},{
-						name: "!duel",
-						value: "Use !duel @mention to duel someone in discord, the winner will be decided randomly!"
+						name: "Commands",
+						value: "- **/live** : Takes your discord username and appends it to twitch.tv to create a link, only works if your discord and twitch username match. - **/duel** : Use /duel @mention to duel someone in discord, the winner will be decided randomly!"
 					},
 					],
 					footer: {
