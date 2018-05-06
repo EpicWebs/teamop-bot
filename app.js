@@ -24,9 +24,7 @@ client.on("message", async message => {
 			message.delete().catch(O_o=>{});
 			
 			if(randomNumber == 1) {				
-				await message.channel.send(personToDuel + " threw a fireball at " + authorName);
-				await message.channel.send(authorName + " dodged the fireball and stabbed " + personToDuel);
-				await message.channel.send(personToDuel + " was slain by " + authorName + " in an epic duel.");
+				await message.channel.send(personToDuel + " threw a fireball at " + authorName + ". " + authorName + " dodged the fireball and stabbed " + personToDuel + ". " + personToDuel + " was slain by " + authorName + " in an epic duel.");
 			} else {
 				await message.channel.send(authorName + " was killed by " + personToDuel + " in a duel of the ages.");
 			}
@@ -34,7 +32,7 @@ client.on("message", async message => {
 			break;
 		case "live":
 			var authorUsername = message.author.username;
-			message.edit(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
+			await message.channel.send(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
 	}
   
 });
