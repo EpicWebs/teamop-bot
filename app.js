@@ -18,7 +18,7 @@ client.on("message", async message => {
 		case "help":
 			await message.channel.send({embed:
 				{
-					color: #,
+					color: "#ff6d00",
 					author: {
 						name: client.user.username,
 						icon_url: client.user.avatarURL,
