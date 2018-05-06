@@ -15,6 +15,31 @@ client.on("message", async message => {
 
 	// COMMANDS
 	switch(command) {	
+		case "help":
+			await message.channel.send({embed:
+				{
+					color: #,
+					author: {
+						name: client.user.username,
+						icon_url: client.user.avatarURL,
+					},
+					title: "TeamOP Bot Help",
+					url: "https://www.teamoverpowered.com/",
+					description: "Commands and help for the TeamOP bot.",
+					timestamp: new Date(),
+					fields: [{
+						name: "!live",
+						value: "Takes your discord username and appends it to twitch.tv to create a link, only works if your discord and twitch username match."
+					},{
+						name: "!duel",
+						value: "Use !duel @mention to duel someone in discord, the winner will be decided randomly!"
+					},
+					]
+					footer: {
+						text: "TeamOP Bot",
+					}
+				}
+			});
 		case "duel":
 			var randomNumber = randomIntFromInterval(1,2);
 			var authorName = message.author.username;
