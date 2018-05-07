@@ -43,7 +43,7 @@ client.on("message", async message => {
 			var personToDuel = message.mentions.members.first().user;
 			personToDuel = personToDuel.username;
 			
-			message.delete().catch(O_o=>{});
+			//message.delete().catch(O_o=>{});
 			
 			if(randomNumber == 1) {				
 				await message.channel.send({embed:
