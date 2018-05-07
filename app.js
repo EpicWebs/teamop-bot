@@ -54,7 +54,6 @@ client.on("message", async message => {
 							icon_url: client.user.avatarURL,
 						},
 						title: authorName + " vs " + personToDuel,
-						timestamp: new Date(),
 						fields: [{
 							name: "Duel commencing...",
 							value: personToDuel + " threw a fireball at " + authorName + ".\n" + authorName + " dodged the fireball and stabbed " + personToDuel + ".\n" + personToDuel + " was slain by " + authorName + " in an epic duel."
@@ -72,7 +71,6 @@ client.on("message", async message => {
 							icon_url: client.user.avatarURL,
 						},
 						title: authorName + " vs " + personToDuel,
-						timestamp: new Date(),
 						fields: [{
 							name: "Duel commencing...",
 							value: authorName + " was shot in the knee by " + personToDuel + ".\n" + authorName + " was killed by " + personToDuel + " in a duel of the ages."
