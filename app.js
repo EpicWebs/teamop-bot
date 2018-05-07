@@ -52,7 +52,7 @@ client.on("message", async message => {
 						title: "Duel commencing...",
 						fields: [{
 							name: authorName + " vs " + personToDuel,
-							value: personToDuel + " threw a fireball at " + authorName + ". \n " + authorName + " dodged the fireball and stabbed " + personToDuel + ". \n " + personToDuel + " was slain by " + authorName + " in an epic duel. \n **Winner: " + authorName + "**"
+							value: personToDuel + " threw a fireball at " + authorName + ". \n" + authorName + " dodged the fireball and stabbed " + personToDuel + ". \n" + personToDuel + " was slain by " + authorName + " in an epic duel. \n**Winner: " + authorName + "**"
 						},
 						],
 					}
@@ -65,7 +65,7 @@ client.on("message", async message => {
 						title: "Duel commencing...",
 						fields: [{
 							name: authorName + " vs " + personToDuel,
-							value: authorName + " was shot in the knee by " + personToDuel + ". \n " + authorName + " was killed by " + personToDuel + " in a duel of the ages. \n **Winner: " + personToDuel + "**"
+							value: authorName + " was shot in the knee by " + personToDuel + ". \n" + authorName + " was killed by " + personToDuel + " in a duel of the ages. \n**Winner: " + personToDuel + "**"
 						},
 						],
 					}
