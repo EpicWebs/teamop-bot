@@ -49,10 +49,6 @@ client.on("message", async message => {
 				await message.channel.send({embed:
 					{
 						color: 0xff6d00,
-						author: {
-							name: client.user.username,
-							icon_url: client.user.avatarURL,
-						},
 						title: authorName + " vs " + personToDuel,
 						fields: [{
 							name: "Duel commencing...",
@@ -66,10 +62,6 @@ client.on("message", async message => {
 				await message.channel.send({embed:
 					{
 						color: 0xff6d00,
-						author: {
-							name: client.user.username,
-							icon_url: client.user.avatarURL,
-						},
 						title: authorName + " vs " + personToDuel,
 						fields: [{
 							name: "Duel commencing...",
