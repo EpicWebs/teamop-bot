@@ -22,7 +22,7 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("message", async message => {
 	if(message.author.bot) return;
-	if(message,channel.type === "dm") return;
+	if(message.channel.type === "dm") return;
 	if(message.content.indexOf(config.prefix) !== 0) return;
 
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
