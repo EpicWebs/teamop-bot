@@ -85,6 +85,11 @@ client.on("message", async message => {
 			}
 		
 			break;
+		case "say":
+			const sayMessage = args.join(" ");
+			
+			message.delete().catch(O_o=>{});
+			message.channel.send(sayMessage);
 		case "live":
 			var authorUsername = message.author.username;
 			await message.channel.send(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
