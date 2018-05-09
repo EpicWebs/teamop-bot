@@ -6,6 +6,18 @@ client.on("ready", () => {
   client.user.setActivity('teamoverpowered.com');
 });
 
+client.on("guildMemberAdd", (member) => {
+	const guild = member.guild;
+	newUsers.set(member.id, member.user);
+  
+	if (newUsers.size > 0) {
+		const defaultChannel = guild.defaultChannel;
+		const userlist = newUsers.map(u => u.toString()).join(" ");
+		defaultChannel.send("Welcome to TeamOP " + userlist + "!");
+		newUsers.clear();
+	}
+});
+
 client.on("message", async message => {
 	if(message.author.bot) return;
 	if(message.content.indexOf(config.prefix) !== 0) return;
