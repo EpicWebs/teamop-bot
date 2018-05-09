@@ -49,6 +49,8 @@ client.on("message", async message => {
 					}
 				}
 			});
+
+			break;
 		case "duel":
 			var randomNumber = randomIntFromInterval(1,2);
 			var authorName = message.author.username;
@@ -88,10 +90,15 @@ client.on("message", async message => {
 		case "say":
 			const sayMessage = args.join(" ");
 			
+			message.delete().catch(O_o=>{});
 			message.channel.send(sayMessage);
+
+			break;
 		case "live":
 			var authorUsername = message.author.username;
 			await message.channel.send(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
+
+			break;
 	}
   
 });
