@@ -88,7 +88,6 @@ client.on("message", async message => {
 		case "say":
 			const sayMessage = args.join(" ");
 			
-			message.delete().catch(O_o=>{});
 			message.channel.send(sayMessage);
 		case "live":
 			var authorUsername = message.author.username;
