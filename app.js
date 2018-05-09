@@ -106,6 +106,8 @@ client.on("message", async message => {
 			sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
 				if (!row) return message.reply("Your current points are 0");
 				message.reply(`Your current points are ${row.points}`);
+			}).catch(() => {
+				console.error;
 			});
 
 			break;
@@ -113,6 +115,8 @@ client.on("message", async message => {
 			sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
 				if (!row) return message.reply("Your current level is 0");
 				message.reply(`Your current level is ${row.level}`);
+			}).catch(() => {
+				console.error;
 			});
 
 			break;
