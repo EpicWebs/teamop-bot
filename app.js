@@ -105,6 +105,10 @@ client.on("message", async message => {
 			message.channel.send(sayMessage);
 
 			break;
+		case "teamopbotsucks":
+			message.channel.send("I think you mean Realdawnseeker sucks.");
+
+			break;
 		case "live":
 			var authorUsername = message.author.username;
 			await message.channel.send(authorUsername + " is currently live at https://www.twitch.tv/" + authorUsername);
