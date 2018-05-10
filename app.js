@@ -23,7 +23,6 @@ client.on("guildMemberAdd", (member) => {
 client.on("message", async message => {
 	if(message.author.bot) return;
 	if(message.channel.type === "dm") return;
-	if(message.content.indexOf(config.prefix) !== 0) return;
 
 	const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
@@ -48,6 +47,8 @@ client.on("message", async message => {
 			sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
 		});
 	});
+	
+	if(message.content.indexOf(config.prefix) !== 0) return;
 
 	// COMMANDS
 	switch(command) {	
