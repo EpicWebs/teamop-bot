@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "discord.js": "^11.3.2",
-    "enmap": "^2.2.1"
+    "enmap": "^2.2.1",
+    "enmap-level": "^2.1.0"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
