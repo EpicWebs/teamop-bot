@@ -119,7 +119,7 @@ client.on("message", async message => {
 
 			// POINTS COMMAND
 			const scorePoints = client.points.get(message.author.id).points;
-			!scorePoints ? message.channel.send('You have no points yet.') : message.channel.send(`You have ${scorePoints} points!`);
+			!scorePoints ? message.channel.send(message.author.username + ' has no points yet.') : message.channel.send(message.author.username + ` has ${scorePoints} points!`);
 
 			break;
 		case "level":
@@ -127,7 +127,7 @@ client.on("message", async message => {
 
 			// LEVEL COMMAND
 			const scoreLevel = client.points.get(message.author.id).level;
-			!scoreLevel ? message.channel.send('You have no levels yet.') : message.channel.send(`You are currently level ${scoreLevel}!`);
+			!scoreLevel ? message.channel.send(message.author.username + ' has no levels yet.') : message.channel.send(message.author.username + ` is currently level ${scoreLevel}!`);
 			
 			break;
 	}
