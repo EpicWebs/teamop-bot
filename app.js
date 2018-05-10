@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 const sql = require("sqlite");
-sql.open("./score.sqlite");
+sql.open("db/score.sqlite");
 
 client.on("ready", () => {
   client.user.setActivity('teamoverpowered.com');
@@ -47,7 +47,7 @@ client.on("message", async message => {
 			sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
 		});
 	});
-	
+
 	if(message.content.indexOf(config.prefix) !== 0) return;
 
 	// COMMANDS
@@ -125,6 +125,8 @@ client.on("message", async message => {
 
 			break;
 		case "points":
+			message.delete().catch(O_o=>{});
+
 			sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
 				if (!row) return message.reply("Your current points are 0");
 				message.reply(`Your current points are ${row.points}`);
@@ -134,6 +136,8 @@ client.on("message", async message => {
 
 			break;
 		case "level":
+			message.delete().catch(O_o=>{});
+
 			sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
 				if (!row) return message.reply("Your current level is 0");
 				message.reply(`Your current level is ${row.level}`);
