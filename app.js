@@ -6,7 +6,7 @@ const config = require("./config.json");
 const Enmap = require('enmap');
 const EnmapLevel = require('enmap-level');
 const pointProvider = new EnmapLevel({name: "points"});
-this.points = new Enmap({provider: pointProvider});
+client.points = new Enmap({provider: pointProvider});
 
 client.on("ready", () => {
   client.user.setActivity('teamoverpowered.com');
