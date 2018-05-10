@@ -46,9 +46,9 @@ client.on("message", async message => {
 						name: client.user.username,
 						icon_url: client.user.avatarURL,
 					},
-					title: "TeamOP Bot Help",
+					title: "teamoverpowered.com",
 					url: "https://www.teamoverpowered.com/",
-					description: "Commands and help for the TeamOP bot.",
+					description: "Commands and help information for using TeamOPBot.",
 					timestamp: new Date(),
 					fields: [{
 						name: "Commands",
