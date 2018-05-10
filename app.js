@@ -8,7 +8,7 @@ const EnmapLevel = require('enmap-level');
 const pointProvider = new EnmapLevel({name: "points"});
 this.points = new Enmap({provider: pointProvider});
 
-require("./modules/functions.js")(client);
+require("modules/functions.js")(client);
 
 client.on("ready", () => {
   client.user.setActivity('teamoverpowered.com');
@@ -28,7 +28,7 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("message", async message => {
 	if(message.author.bot) return;
-	client.pointsMonitor(client, message);
+	pointsMonitor(client, message);
 
 	if(message.content.indexOf(config.prefix) !== 0) return;
 	if(message.channel.type === "dm") return;
@@ -135,3 +135,20 @@ client.login(process.env.TOKEN);
 function randomIntFromInterval(min,max) {
 	return Math.floor(Math.random()*(max-min+1)+min);
 }
+
+function pointsMonitor(client, message) {
+	if (message.channel.type !=='text') return;
+	if (message.content.startsWith("/")) return;
+
+	const score = client.points.get(message.author.id) || { points: 0, level: 0 };
+	score.points++
+
+	const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
+
+	if (score.level < curLevel) {
+		message.reply(`You've leveled up to level **${curLevel}**, you're getting OP!`);
+		score.level = curLevel;
+	}
+
+	client.points.set(message.author.id, score);
+};
