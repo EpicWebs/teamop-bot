@@ -4,10 +4,16 @@ const config = require("./config.json");
 
 // Points system
 const Enmap = require('enmap');
-const EnmapLevel = require('enmap-level');
-const pointProvider = new EnmapLevel({name: "points"});
-client.points = new Enmap({provider: pointProvider});
 
+const EnmapPGSql = required('enmap-pgsql');
+const pointProvider = new EnmapPGSql({name: "points"});
+
+const level = new EnmapPGSql({ 
+	name: "points",
+	connectionString: process.env.DATABASE_URL,
+  });
+
+client.points = new Enmap({provider: pointProvider});
 
 client.on("ready", () => {
   client.user.setActivity('teamoverpowered.com');
