@@ -13,6 +13,7 @@ client.on("ready", () => {
   client.user.setActivity('teamoverpowered.com');
 });
 
+
 client.on("guildMemberAdd", (member) => {
 	const guild = member.guild;
 	newUsers.set(member.id, member.user);
