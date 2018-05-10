@@ -52,7 +52,7 @@ client.on("message", async message => {
 					timestamp: new Date(),
 					fields: [{
 						name: "Commands",
-						value: "**/live** : Takes your discord username and appends it to twitch.tv to create a link, only works if your discord and twitch username match.\n**/duel** : Use /duel @mention to duel someone in discord, the winner will be decided randomly.\n**/points** : Use /points to see how many points you have earned on the server.\n**/level** : Use /level to see what level you currently are on the server."
+						value: "**/say** : use /say message to make TeamOPBot say something.\n**/live** : Takes your discord username and appends it to twitch.tv to create a link, only works if your discord and twitch username match.\n**/duel** : Use /duel @mention to duel someone in discord, the winner will be decided randomly.\n**/points** : Use /points to see how many points you have earned on the server.\n**/level** : Use /level to see what level you currently are on the server."
 					},
 					],
 					footer: {
