@@ -130,6 +130,10 @@ client.on("message", async message => {
 			!scoreLevel ? message.channel.send(message.author.username + ' has no levels yet.') : message.channel.send(message.author.username + ` is currently level ${scoreLevel}!`);
 			
 			break;
+		default:
+			message.channel.send("I do not know that command, use /help for commands you can use!");
+
+			break;
 	}
   
 });
