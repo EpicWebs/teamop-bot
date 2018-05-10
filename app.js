@@ -8,8 +8,6 @@ const EnmapLevel = require('enmap-level');
 const pointProvider = new EnmapLevel({name: "points"});
 this.points = new Enmap({provider: pointProvider});
 
-require("modules/functions.js")(client);
-
 client.on("ready", () => {
   client.user.setActivity('teamoverpowered.com');
 });
