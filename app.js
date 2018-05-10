@@ -5,7 +5,7 @@ const config = require("./config.json");
 // Points system
 const Enmap = require('enmap');
 
-const EnmapPGSql = required('enmap-pgsql');
+const EnmapPGSql = require('enmap-pgsql');
 const pointProvider = new EnmapPGSql({name: "points", connectionString: process.env.DATABASE_URL,});
 client.points = new Enmap({provider: pointProvider});
 
