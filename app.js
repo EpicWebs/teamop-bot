@@ -28,7 +28,9 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("message", async message => {
 	if(message.author.bot) return;
+	
 	pointsMonitor(client, message);
+	botPersonality(client, message);
 
 	if(message.content.indexOf(config.prefix) !== 0) return;
 	if(message.channel.type === "dm") return;
@@ -160,3 +162,22 @@ function pointsMonitor(client, message) {
 
 	client.points.set(message.author.id, score);
 };
+
+
+function botPersonality(client, message) {
+	if (message.channel.type !=='text') return;
+	if (message.content.startsWith(config.prefix)) return;
+
+	switch (true) {
+		case messageTextContains(message,"teamopbot"):
+			message.reply('Yes?');
+			break;
+		case messageTextContains(message,"TeamOPBot"):
+			message.reply('Yes?');
+			break;
+	}
+}
+
+function messageTextContains(message,text) {
+    return message.content.contains(text);
+}
