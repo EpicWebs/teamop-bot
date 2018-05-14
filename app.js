@@ -169,7 +169,7 @@ function botPersonality(client, message) {
 
 	switch (true) {
 		case messageTextContains(message,"teamopbot"):
-			message.reply('Did someone call me?');
+			message.reply('Did you call me?');
 			break;
 	}
 }
