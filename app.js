@@ -178,8 +178,5 @@ function messageTextContains(message,text) {
 	var messageText = message.content.toLowerCase();
 	var searchText = text.toLowerCase();
 
-	console.log(messageText);
-	console.log(searchText);
-
     return messageText.includes(searchText);
 }
