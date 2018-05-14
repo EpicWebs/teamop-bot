@@ -28,7 +28,7 @@ client.on("guildMemberAdd", (member) => {
 
 client.on("message", async message => {
 	if(message.author.bot) return;
-	
+
 	pointsMonitor(client, message);
 	botPersonality(client, message);
 
@@ -163,7 +163,6 @@ function pointsMonitor(client, message) {
 	client.points.set(message.author.id, score);
 };
 
-
 function botPersonality(client, message) {
 	if (message.channel.type !=='text') return;
 	if (message.content.startsWith(config.prefix)) return;
@@ -179,5 +178,5 @@ function botPersonality(client, message) {
 }
 
 function messageTextContains(message,text) {
-    return message.content.contains(text);
+    return message.content.includes(text);
 }
