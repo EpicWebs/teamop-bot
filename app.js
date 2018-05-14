@@ -171,6 +171,9 @@ function botPersonality(client, message) {
 		case messageTextContains(message,"teamopbot"):
 			message.reply('Did you call me?');
 			break;
+		case messageTextContains(message,"is anyone streaming tonight"):
+			message.reply('Not me!');
+			break;
 	}
 }
 
