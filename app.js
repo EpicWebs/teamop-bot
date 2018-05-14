@@ -171,12 +171,10 @@ function botPersonality(client, message) {
 		case messageTextContains(message,"teamopbot"):
 			message.reply('Yes?');
 			break;
-		case messageTextContains(message,"TeamOPBot"):
-			message.reply('Yes?');
-			break;
 	}
 }
 
 function messageTextContains(message,text) {
+	var searchText = text.toLowerCase();
     return message.content.includes(text);
 }
