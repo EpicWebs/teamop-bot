@@ -176,5 +176,8 @@ function botPersonality(client, message) {
 
 function messageTextContains(message,text) {
 	var searchText = text.toLowerCase();
+
+	console.log(searchText);
+
     return message.content.includes(searchText);
 }
