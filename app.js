@@ -174,6 +174,9 @@ function botPersonality(client, message) {
 		case messageTextContains(message,"is anyone streaming tonight"):
 			message.reply('Not me!');
 			break;
+		case messageTextContains(message,"i love you"):
+			message.reply('Do you love me?');
+			break;
 	}
 }
 
