@@ -10,9 +10,17 @@ const pointProvider = new EnmapPGSql({name: "points", connectionString: process.
 client.points = new Enmap({provider: pointProvider});
 
 client.on("ready", () => {
-  client.user.setActivity('teamoverpowered.com');
+	client.user.setActivity('teamoverpowered.com');
 });
 
+client.on("guildCreate", (guild) => {
+	guild.createRole({
+		name: 'OP Bots',
+		color: 'ORANGE',
+	  })
+	.then(role => console.log(`Created new role with name ${role.name} and color ${role.color}`))
+	.catch(console.error);
+});
 
 client.on("guildMemberAdd", (member) => {
 	const guild = member.guild;
