@@ -21,7 +21,7 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
-	if(newmember.presence.game.streaming !== null) {
+	if(newMember.presence.game.streaming !== null) {
 		if(newMember.presence.game.streaming) {
 			if(!oldMember.presence.game.streaming) {
 				newMember.addRole('Live Now!');
