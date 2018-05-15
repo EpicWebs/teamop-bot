@@ -24,14 +24,7 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 	if(newmember.presence.game.streaming !== null) {
 		if(newMember.presence.game.streaming) {
 			if(!oldMember.presence.game.streaming) {
-
-				const score = client.points.get(newMember.id) || { points: 0, level: 0 };		
-				const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
-
-				if(score.points > 10) {
-					newMember.addRole('Live Now!');
-				}
-
+				newMember.addRole('Live Now!');
 			}
 		} else {
 			newMember.removeRole('Live Now!');
