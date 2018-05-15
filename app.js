@@ -25,11 +25,15 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 	const thisGuild = newMember.guild;
 	const liveRole = thisGuild.roles.find("name", "Live Now!");
 
-	if(newMember.presence !== null) {
-		if(newMember.presence.game !== null) {
-			if(newMember.presence.game.streaming !== null) {
-				if(newMember.presence.game.streaming) {
-					newMember.addRole(liveRole);
+	if(memberLevel > 4) {
+		if(newMember.presence !== null) {
+			if(newMember.presence.game !== null) {
+				if(newMember.presence.game.streaming !== null) {
+					if(newMember.presence.game.streaming) {
+						newMember.addRole(liveRole);
+					} else {
+						newMember.removeRole(liveRole);
+					}
 				} else {
 					newMember.removeRole(liveRole);
 				}
@@ -39,8 +43,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 		} else {
 			newMember.removeRole(liveRole);
 		}
-	} else {
-		newMember.removeRole(liveRole);
 	}
 });
 
