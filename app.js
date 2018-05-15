@@ -22,8 +22,8 @@ client.on("guildMemberAdd", (member) => {
 
 client.on('presenceUpdate', (oldMember, newMember) => {
 	const memberLevel = getMemberLevel(client, newMember);
-	const guild = newMember.guild;
-	const liveRole = message.guild.roles.find("name", "Live Now!");
+	const thisGuild = newMember.guild;
+	const liveRole = thisGuild.roles.find("name", "Live Now!");
 
 	if(newMember.presence !== null) {
 		if(newMember.presence.game !== null) {
