@@ -21,6 +21,8 @@ client.on("guildMemberAdd", (member) => {
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
+	const memberLevel = getMemberLevel(client, newMember);
+	
 	if(newMember.presence.game.streaming !== null) {
 		if(newMember.presence.game.streaming) {
 			if(!oldMember.presence.game.streaming) {
@@ -170,6 +172,13 @@ function pointsMonitor(client, message) {
 
 	client.points.set(message.author.id, score);
 };
+
+function getMemberLevel(client, member) {
+	const score = client.points.get(member.id) || { points: 0, level: 0 };
+	const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
+
+	return curLevel;
+}
 
 function botPersonality(client, message) {
 	if (message.channel.type !=='text') return;
