@@ -22,23 +22,25 @@ client.on("guildMemberAdd", (member) => {
 
 client.on('presenceUpdate', (oldMember, newMember) => {
 	const memberLevel = getMemberLevel(client, newMember);
+	const guild = newMember.guild;
+	const liveRole = message.guild.roles.find("name", "Live Now!");
 
 	if(newMember.presence !== null) {
 		if(newMember.presence.game !== null) {
 			if(newMember.presence.game.streaming !== null) {
 				if(newMember.presence.game.streaming) {
-					newMember.addRole('Live Now!');
+					newMember.addRole(liveRole);
 				} else {
-					newMember.removeRole('Live Now!');
+					newMember.removeRole(liveRole);
 				}
 			} else {
-				newMember.removeRole('Live Now!');
+				newMember.removeRole(liveRole);
 			}
 		} else {
-			newMember.removeRole('Live Now!');
+			newMember.removeRole(liveRole);
 		}
 	} else {
-		newMember.removeRole('Live Now!');
+		newMember.removeRole(liveRole);
 	}
 });
 
