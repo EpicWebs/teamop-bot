@@ -15,13 +15,18 @@ client.on("ready", () => {
 
 client.on("guildMemberAdd", (member) => {
 	const guild = member.guild;
-	newUsers.set(member.id, member.user);
-  
-	if (newUsers.size > 0) {
-		const defaultChannel = guild.defaultChannel;
-		const userlist = newUsers.map(u => u.toString()).join(" ");
-		defaultChannel.send("Welcome to TeamOP " + userlist + "!");
-		newUsers.clear();
+	const defaultChannel = guild.defaultChannel;
+
+	defaultChannel.send("Welcome to TeamOP " + member.username + "!");
+});
+
+client.on('presenceUpdate', (oldMember, newMember) => {
+	if(newMember.presence.game.streaming) {
+		if(!oldMember.presence.game.streaming) {
+			newMember.addRole('Live Now!');
+		}
+	} else {
+		newMember.removeRole('Live Now!');
 	}
 });
 
