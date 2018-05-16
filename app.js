@@ -175,7 +175,7 @@ function pointsMonitor(client, message) {
 	const score = client.points.get(message.author.id) || { points: 0, level: 0 };
 	score.points++
 
-	const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
+	const curLevel = calculateMemberLevel(score.points);
 
 	if (score.level < curLevel) {
 		message.reply(`You've leveled up to level **${curLevel}**, you're getting OP!`);
@@ -187,9 +187,14 @@ function pointsMonitor(client, message) {
 
 function getMemberLevel(client, member) {
 	const score = client.points.get(member.id) || { points: 0, level: 0 };
-	const curLevel = Math.floor(0.1 * Math.sqrt(score.points));
+	const curLevel = calculateMemberLevel(score.points);
 
 	return curLevel;
+}
+
+function calculateMemberLevel(points) {
+	const level = Math.floor(points / 100) * 100;
+	return level;
 }
 
 function botPersonality(client, message) {
