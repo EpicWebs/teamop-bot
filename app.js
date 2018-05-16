@@ -139,16 +139,12 @@ client.on("message", async message => {
 
 			break;
 		case "points":
-			message.delete().catch(O_o=>{});
-
 			// POINTS COMMAND
 			const scorePoints = client.points.get(message.author.id).points;
 			!scorePoints ? message.channel.send(message.author.username + ' has no points yet.') : message.channel.send(message.author.username + ` has ${scorePoints} points!`);
 
 			break;
 		case "level":
-			message.delete().catch(O_o=>{});
-
 			// LEVEL COMMAND
 			const scoreLevel = client.points.get(message.author.id).level;
 			!scoreLevel ? message.channel.send(message.author.username + ' has no levels yet.') : message.channel.send(message.author.username + ` is currently level ${scoreLevel}!`);
@@ -180,7 +176,7 @@ function pointsMonitor(client, message) {
 	if (score.level < curLevel) {
 		message.reply(`You've leveled up to level **${curLevel}**, you're getting OP!`);
 	}
-	
+
 	score.level = curLevel;
 
 	client.points.set(message.author.id, score);
@@ -194,7 +190,7 @@ function getMemberLevel(client, member) {
 }
 
 function calculateMemberLevel(points) {
-	const level = (Math.floor(points / 100) * 0.01);
+	const level = Math.floor(points / 100);
 	return level;
 }
 
