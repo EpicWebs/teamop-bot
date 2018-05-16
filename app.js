@@ -193,7 +193,7 @@ function getMemberLevel(client, member) {
 }
 
 function calculateMemberLevel(points) {
-	const level = Math.floor(points / 100);
+	const level = (Math.floor(points / 100) * 0.01);
 	return level;
 }
 
