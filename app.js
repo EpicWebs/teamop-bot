@@ -179,8 +179,9 @@ function pointsMonitor(client, message) {
 
 	if (score.level < curLevel) {
 		message.reply(`You've leveled up to level **${curLevel}**, you're getting OP!`);
-		score.level = curLevel;
 	}
+	
+	score.level = curLevel;
 
 	client.points.set(message.author.id, score);
 };
