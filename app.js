@@ -141,7 +141,7 @@ client.on("message", async message => {
 		case "points":
 			// POINTS COMMAND
 			const scorePoints = client.points.get(message.author.id).points;
-			!scorePoints ? message.channel.send(message.author.username + ' has no points yet.') : message.channel.send(message.author.username + ` has ${scorePoints} points!`);
+			!scorePoints ? message.channel.send(message.author.username + ' has no xp yet.') : message.channel.send(message.author.username + ` has ${scorePoints} xp!`);
 
 			break;
 		case "level":
