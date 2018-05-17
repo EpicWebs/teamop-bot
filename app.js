@@ -17,7 +17,7 @@ client.on("guildMemberAdd", (member) => {
 	const guild = member.guild;
 	const defaultChannel = guild.defaultChannel;
 
-	defaultChannel.send("Welcome to TeamOP " + member.username + "!");
+	defaultChannel.send("Welcome to TeamOP " + member.displayName + "!");
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
