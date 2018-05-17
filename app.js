@@ -179,7 +179,7 @@ function getMemberLevel(client, member) {
 	const rareRole = thisGuild.roles.find("name", "Rare");
 
 	if (curLevel > 4) {
-		newMember.addRole(rareRole);
+		member.addRole(rareRole);
 	}
 
 	return curLevel;
