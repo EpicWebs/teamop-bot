@@ -176,6 +176,11 @@ function pointsMonitor(client, message) {
 function getMemberLevel(client, member) {
 	const score = client.points.get(member.id) || { points: 0, level: 0 };
 	const curLevel = calculateMemberLevel(score.points);
+	const rareRole = thisGuild.roles.find("name", "Rare");
+
+	if (curLevel > 4) {
+		newMember.addRole(rareRole);
+	}
 
 	return curLevel;
 }
