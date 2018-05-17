@@ -35,8 +35,6 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 				}
 			}
 		}
-	} else {
-		newMember.removeRole(liveRole);
 	}
 });
 
