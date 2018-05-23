@@ -27,18 +27,11 @@ client.on('presenceUpdate', (oldMember, newMember) => {
 	const liveRole = thisGuild.roles.find("name", "Live Now");
 
 	if(memberLevel > 4) {
-		console.log("1");
-		if(newMember.presence) {
-			console.log("2");
-			if(newMember.presence.game) {
-				console.log("3");
-				if(newMember.presence.game.streaming !== null) {
-					console.log("4");
-					newMember.addRole(liveRole);
-				} else {
-					newMember.removeRole(liveRole);
-				}
-			}
+		if(newMember.presence.game.streaming !== null) {
+			console.log("4");
+			newMember.addRole(liveRole);
+		} else {
+			newMember.removeRole(liveRole);
 		}
 	}
 });
