@@ -17,7 +17,7 @@ client.on("guildMemberAdd", (member) => {
 	const guild = member.guild;
 	const defaultChannel = guild.defaultChannel;
 
-	defaultChannel.send("Welcome to TeamOP " + member.displayName + "!");
+	defaultChannel.send("Welcome to Lynqoids Discord " + member.displayName + "!");
 });
 
 client.on('presenceUpdate', (oldMember, newMember) => {
@@ -67,15 +67,15 @@ client.on("message", async message => {
 					},
 					title: "teamoverpowered.com",
 					url: "https://www.teamoverpowered.com/",
-					description: "Commands and help information for using TeamOPBot.",
+					description: "Commands and help information for using LynqoidBot.",
 					timestamp: new Date(),
 					fields: [{
 						name: "Commands",
-						value: "**/say** : use /say message to make TeamOPBot say something.\n**/live** : Takes your discord username and appends it to twitch.tv to create a link, only works if your discord and twitch username match.\n**/duel** : Use /duel @mention to duel someone in discord, the winner will be decided randomly.\n**/xp** : Use /xp to see how much xp you have earned on the server.\n**/level** : Use /level to see what level you currently are on the server."
+						value: "**/say** : use /say message to make LynqoidBot say something.\n**/live** : Takes your discord username and appends it to twitch.tv to create a link, only works if your discord and twitch username match.\n**/duel** : Use /duel @mention to duel someone in discord, the winner will be decided randomly.\n**/xp** : Use /xp to see how much xp you have earned on the server.\n**/level** : Use /level to see what level you currently are on the server."
 					},
 					],
 					footer: {
-						text: "TeamOP Bot",
+						text: "Lynqoid Bot",
 					}
 				}
 			});
@@ -122,11 +122,6 @@ client.on("message", async message => {
 
 			message.delete().catch(O_o=>{});
 			message.channel.send(sayMessage);
-
-			break;
-		case "teamopbotsucks":
-			message.channel.send("I think you mean Realdawnseeker sucks.");
-
 			break;
 		case "live":
 			var authorUsername = message.author.username;
@@ -198,7 +193,7 @@ function botPersonality(client, message) {
 	if (message.content.startsWith(config.prefix)) return;
 
 	switch (true) {
-		case messageTextContains(message,"teamopbot"):
+		case messageTextContains(message,"lynqoidbot"):
 			message.reply('Did you call me?');
 			break;
 		case messageTextContains(message,"is anyone streaming tonight"):
